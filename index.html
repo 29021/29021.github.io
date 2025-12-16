@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2902</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- rewritten cloak thing idk what was broken b4 ;-;
+   FIXED 12/9/2025
+  -->
+ <div class="top-left">
+        <button id="menuButton" class="menu-btn">info
+        </button>
+        <div id="dropdownMenu" class="dropdown">
+            <p>wip website by <a href="https://github.com/29021">2902</a>, last updated 12/12/25.</p>
+            <div class="link-btn" onclick="openBlankCloak('https://29021.github.io/main/')">
+                cloak
+            </div>
+        </div>
+    </div>
+
+  <main class="container">
+     links:
+
+<!-- here's the list, you can js go to the actual webisted if you want, only reason their "cloaked" is so people cant steal the url as easily. -->
+    
+     <div class="link-btn" onclick="openBlankCloak('https://29021.github.io/buckshot/')">
+      buckshot
+    </div>
+
+  <div class="link-btn" onclick="openBlankCloak('https://29021.github.io/kindergarten/')">
+      kindergarten
+    </div>
+    
+    <br>
+    stolen:
+     <div class="link-btn" onclick="openBlankCloak('https://craep0.github.io/gn-math.github.io//')">
+      old gn-math
+    </div>
+    
+    <div class="link-btn" onclick="openBlankCloak('https://joemama980.github.io/games/index.html')">
+      seraph
+    </div>
+
+     <div class="link-btn" onclick="openBlankCloak('https://josh100.neocities.org/macvg/')">
+      macvg
+    </div>
+
+    <div class="link-btn" onclick="openBlankCloak('https://skipperskippeskap.neocities.org/')">
+      skipper's
+    </div>
+
+    <div class="link-btn" onclick="openBlankCloak('https://chstextbook.github.io/pages/nav/gtools.html')">
+      holy unblocker
+    </div>
+
+    <div class="link-btn" onclick="openBlankCloak('https://nxx99.neocities.org/')">
+      nxx99's
+    </div>
+
+    <div class="link-btn" onclick="openBlankCloak('https://mrbrowns-us-history.zone.id/')">
+      noah's #1
+    </div>
+
+    <div class="link-btn" onclick="openBlankCloak('https://writing-workshop.zone.id/')">
+      noah's #2
+    </div>
+
+     <div class="link-btn" onclick="openBlankCloak('https://untitledproxy.pages.dev/')">
+      max's
+    </div>
+    
+    <br>
+    other
+    <div class="link-btn" onclick="openBlankCloak('https://example.com/')">
+      placeholder
+    </div>
+    
+    
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById("menuButton");
+    const dropdown = document.getElementById("dropdownMenu");
+
+    menuBtn.addEventListener("click", () => {
+      dropdown.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".top-left")) {
+        dropdown.classList.remove("show");
+      }
+    });
+  </script>
+
+    <script>
+        function openBlankCloak(url) {
+            const win = window.open('about:blank', '_blank');
+            win.document.title = "New Tab";
+            win.document.body.style.margin = "0";
+            win.document.body.innerHTML =
+                `<iframe src="${url}" style="width:100vw;height:100vh;border:none;"></iframe>`;
+        }
+    </script>
+
+</body>
+</html>
+
