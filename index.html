@@ -1,14 +1,128 @@
-<html>
-<button class="link-btn" onclick="openBlankCloak('https://29021.github.io/main/')" style="text-align: center;">
-      launcher
+<!-- yep, this is vibecoded (bro i suck ass at css shut up) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>luncher yum</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0d0d0d;
+    color: #e5e5e5;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    background: #1a1a1a;
+    color: #e5e5e5;
+    border: 1px solid #333;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  button:hover {
+    background: #222;
+    color: #5aa0f5;
+  }
+
+  button:active {
+    transform: scale(0.97);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="card">
+    <h1>Super Fancy Launcher</h1>
+    <p>Click the freakahh button bro its right there</p>
+    <button onclick="openBlankCloak('https://29021.github.io/main/')">
+      Open
     </button>
+  </div>
+</div>
+
 <script>
-        function openBlankCloak(url) {
-            const win = window.open('about:blank', '_blank');
-            win.document.title = "New Tab";
-            win.document.body.style.margin = "0";
-            win.document.body.innerHTML =
-                `<iframe src="${url}" style="width:100vw;height:100vh;border:none;"></iframe>`;
-        }
-    </script>
+function openBlankCloak(url) {
+    const win = window.open('', '_blank');
+
+    if (!win) {
+        alert("Enable popups to continue.");
+        return;
+    }
+
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>New Tab</title>
+            <link rel="icon" href="https://www.google.com/favicon.ico">
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                    overflow: hidden;
+                    background: #0d0d0d;
+                }
+                iframe {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                }
+            </style>
+        </head>
+        <body>
+            <iframe src="${url}"></iframe>
+        </body>
+        </html>
+    `);
+
+    win.document.close();
+}
+</script>
+
+</body>
 </html>
